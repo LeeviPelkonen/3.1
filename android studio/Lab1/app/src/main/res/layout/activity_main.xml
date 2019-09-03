@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="How are you?"
+        android:contentDescription="Tell us how you feel by selecting one of two options below"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -19,6 +20,7 @@
 
     <Button
         android:text="sad"
+        android:contentDescription="i am sad"
         android:id="@+id/buttonSad"
         android:layout_width="50pt"
         android:layout_height="25pt"
@@ -29,6 +31,7 @@
 
     <Button
         android:text="happy"
+        android:contentDescription="i am happy"
         android:id="@+id/buttonHappy"
         android:layout_width="50pt"
         android:layout_height="25pt"
