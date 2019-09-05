@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">sensorLab</string>
+    <string name="sens_val">Acceleration</string>
+    <string name="sens_val_top">Top Acceleration</string>
+    <string name="reset">Reset</string>
+</resources>
