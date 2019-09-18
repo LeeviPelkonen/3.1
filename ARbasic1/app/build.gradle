@@ -45,3 +45,8 @@ sceneform.asset('sampledata/table.obj',
         'default',
         'sampledata/table.sfa',
         'src/main/assets/table')
+
+sceneform.asset('sampledata/lava4.obj',
+        'default',
+        'sampledata/lava4.sfa',
+        'src/main/assets/lava4')

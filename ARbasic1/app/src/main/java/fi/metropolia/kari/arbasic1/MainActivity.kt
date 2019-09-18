@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         fragment = supportFragmentManager.findFragmentById(R.id.sceneform_fragment) as ArFragment;
 
-        val modelUri = Uri.parse("table.sfb")
+        val modelUri = Uri.parse("lava4.sfb")
         val renderableFuture = ModelRenderable.builder()
             .setSource(fragment.context, modelUri)
             .build()

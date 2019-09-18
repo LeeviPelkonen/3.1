@@ -1,0 +1,49 @@
+{
+  materials: [
+    {
+      name: 'lava4',
+      parameters: [
+        {
+          baseColor: 'lava4',
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/lava4.obj',
+    name: 'lava4',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata\\lava4.jpg',
+      name: 'lava4',
+      pipeline_name: 'lava4.jpg',
+    },
+  ],
+  version: '0.54:2',
+}
