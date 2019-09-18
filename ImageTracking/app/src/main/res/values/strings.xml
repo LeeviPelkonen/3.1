@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ImageTracking</string>
+    <string name="fit_image_to_scan">fitting image for scanning</string>
+</resources>
