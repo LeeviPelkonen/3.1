@@ -1,6 +1,7 @@
 package com.example.lab6
 
 import android.bluetooth.BluetoothAdapter
+import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothManager
 import android.bluetooth.le.*
 import android.content.Context
@@ -8,10 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private var mBluetoothAdapter: BluetoothAdapter? = null
+    private val itemList = mutableListOf<ScanResult>()
+    lateinit var recyclerM: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +24,9 @@ class MainActivity : AppCompatActivity() {
         search.setOnClickListener { startScan() }
 
         val bluetoothManager = getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
+
+        recyclerM = findViewById(R.id.recyclerMain)
+        recyclerM.layoutManager = LinearLayoutManager(this)
         mBluetoothAdapter = bluetoothManager.adapter
     }
 
@@ -32,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
         private fun startScan() {
             Log.d("DBG", "Scan start")
+            itemList.clear()
             mScanResults = HashMap()
             mScanCallback = BtleScanCallback()
             mBluetoothLeScanner = mBluetoothAdapter!!.bluetoothLeScanner
@@ -74,7 +83,8 @@ class MainActivity : AppCompatActivity() {
             mScanResults!![deviceAddress] = result
             Log.d("DBG", "Device address: $deviceAddress (${result.isConnectable})")
             val a = ("Device address: $deviceAddress (${result.isConnectable})")
-            textView.text = a
+            itemList.add(result)
+            recyclerMain.adapter = MainAdapter(itemList)
         }
     }
 }
